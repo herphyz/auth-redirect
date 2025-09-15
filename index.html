@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Facebook Auth Redirect</title>
+</head>
+<body>
+  <h2>Redirecting...</h2>
+  <script>
+    // Capture the redirect params
+    const params = new URLSearchParams(window.location.hash.substring(1));
+    // Send to your Flutter app (if using deep link or universal link)
+    if (params.has('access_token')) {
+      // You can forward this to your app via deep link
+      window.location.href = "davie://davie.com?token=" + params.get('access_token');
+    }
+  </script>
+</body>
+</html>
